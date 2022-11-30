@@ -1,0 +1,1 @@
+g++ main.cpp EasyBMP.hpp -o programa.exe
