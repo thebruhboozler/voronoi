@@ -65,12 +65,13 @@ int main(){
     for(int y = 0 ; y < 512 ; y++ ){
         for(int x = 0 ; x < 512 ; x++){
             int closest = findClosest(x,y);
+            float fade = 1/points[closest].distanceTo(x,y) 
 
             int r = points[closest].r;
             int g = points[closest].g;
             int b = points[closest].b;
 
-            img.SetPixel(x, y, EasyBMP::RGBColor(r, g, b));
+            img.SetPixel(x, y, EasyBMP::RGBColor(fade*r, fade*g, fade*b));
         }
     }
 
